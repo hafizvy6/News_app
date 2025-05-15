@@ -5,6 +5,17 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text('Profile Page'));
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Profile Page'),
+            IconButton(onPressed: () {}, icon: Icon(Icons.dark_mode)),
+          ],
+        ),
+      ),
+    );
   }
 }
