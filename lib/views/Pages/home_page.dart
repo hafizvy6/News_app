@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
+
           Positioned(
             bottom: 20,
             left: 0,
