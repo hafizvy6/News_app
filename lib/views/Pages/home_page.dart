@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/widgets/breaking_news.dart';
 import 'package:news_app/widgets/category_list.dart';
 import 'package:news_app/widgets/popular_redactions.dart';
 
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
             Image.asset('assets/Images/APP_logo1.png', height: 40),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.notifications, color: Colors.orange),
+              icon: const Icon(Icons.notifications, color: Colors.orange),
             ),
           ],
         ),
@@ -24,9 +25,27 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            child: Column(children: [CategoryList(), SizedBox(height: 1150)]),
+            physics: NeverScrollableScrollPhysics(),
+            child: Column(
+              children: [const CategoryList(), const SizedBox(height: 1150)],
+            ),
           ),
-          Positioned(
+          const Positioned(
+            top: 55,
+            right: 0,
+            left: 20,
+            child: Text(
+              'Breaking News:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+          ),
+          const Positioned(
+            top: 85,
+            right: 0,
+            left: 0,
+            child: BreakingNewsSlider(),
+          ),
+          const Positioned(
             bottom: 70,
             right: 20,
             left: 30,
@@ -36,7 +55,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             bottom: 20,
             left: 0,
             right: 0,

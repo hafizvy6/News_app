@@ -5,18 +5,18 @@ import 'package:news_app/services/news.dart';
 import 'package:news_app/providers/providers.dart';
 import 'package:news_app/views/Pages/detailed_news_page.dart';
 
-class LatestNewsSlider extends ConsumerStatefulWidget {
-  const LatestNewsSlider({super.key});
+class BreakingNewsSlider extends ConsumerStatefulWidget {
+  const BreakingNewsSlider({super.key});
 
   @override
-  ConsumerState<LatestNewsSlider> createState() => _BreakingNewsSliderState();
+  ConsumerState<BreakingNewsSlider> createState() => _BreakingNewsSliderState();
 }
 
-class _BreakingNewsSliderState extends ConsumerState<LatestNewsSlider> {
+class _BreakingNewsSliderState extends ConsumerState<BreakingNewsSlider> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => News().fetchLatestNews(ref));
+    Future.microtask(() => News().fetchBreakingNews(ref));
   }
 
   @override
@@ -34,7 +34,7 @@ class _BreakingNewsSliderState extends ConsumerState<LatestNewsSlider> {
 
     return CarouselSlider(
       options: CarouselOptions(
-        height: 150,
+        height: 450,
         autoPlay: true,
         enlargeCenterPage: true,
         viewportFraction: 0.85,
@@ -58,7 +58,7 @@ class _BreakingNewsSliderState extends ConsumerState<LatestNewsSlider> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    elevation: 0,
+                    elevation: 4,
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
